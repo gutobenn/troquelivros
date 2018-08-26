@@ -1,0 +1,32 @@
+pt-BR:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+  time:
+    formats:
+      default: "%A, %d de %B de %Y, %Hh%M"
+      short: "%d/%m %Hh%M"
+      long: "%A, %d de %B de %Y, %Hh%M"
+    am: ''
+    pm: ''
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        more: "Usuários"
+    attributes:
+      user:
+        name: "Nome"
+        role:
+          user: "Usuário Comum"
+          vip: "Usuário Intemediário (NÃO USADO)"
+          admin: "Administrador"
+    errors:
+      models:
+  will_paginate:
+    previous_label: "&laquo; Página anterior"
+    next_label: "Próxima página &raquo;"
+    page_gap: "..."
+

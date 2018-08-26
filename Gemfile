@@ -22,6 +22,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
+gem 'rails-i18n'
+gem 'devise-i18n'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
