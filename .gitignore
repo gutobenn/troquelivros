@@ -21,18 +21,16 @@ db/*.sqlite3
 /log/*
 /tmp/*
 
-# configuration file introduced in Rails 4.1
-/config/secrets.yml
+# add /config/database.yml if it contains passwords
+# /config/database.yml
 
 # various artifacts
 **.war
 *.rbc
 *.sassc
-.rspec
 .redcar/
 .sass-cache
 /config/config.yml
-/config/database.yml
 /coverage.data
 /coverage/
 /db/*.javadb/
@@ -81,3 +79,6 @@ pickle-email-*.html
 # Environment files that may contain sensitive data
 .env
 .powenv
+
+# tilde files are usually backup files from a text editor
+*~
