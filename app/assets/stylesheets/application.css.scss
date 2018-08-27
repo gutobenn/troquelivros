@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.navbar-inverse .navbar-nav a {
+
+  img {
+    margin-right: 10px;
+  }
+
+  img.user-avatar {
+    display: inline-block;
+  }
+
+  @media (min-width: 992px) {
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+
+    img.user-avatar {
+      margin-right: 5px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.user-avatar {
+  border-radius: 50px;
+  border: 2px solid #333;
+}
+
+/* Enable Bootstrap Hover Drop Downs */
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
