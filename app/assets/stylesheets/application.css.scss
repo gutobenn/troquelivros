@@ -16,6 +16,7 @@
 
 body {
   padding-top: 4.5rem;
+  background: #f0f0f0;
 }
 
 .navbar-brand {
@@ -51,10 +52,39 @@ body {
   border: 2px solid #333;
 }
 
+.white-box {
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15);
+  background: #f8f8f8;
+}
+
+.small-margin-left {
+  margin-left: 15px;
+}
+
 /* Enable Bootstrap Hover Drop Downs */
 .dropdown-menu li:hover .sub-menu {
     visibility: visible;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
+}
+
+/* Profile page */
+#profile_user_info {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  h4 {
+    text-align: center;
+  }
+  
+  #profile_user_avatar {
+    border-radius: 150px;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+} 
+
+#profile_user_bookshelf {
+  padding-top: 15px;
 }
