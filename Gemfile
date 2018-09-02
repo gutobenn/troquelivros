@@ -19,12 +19,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'devise'
 gem 'high_voltage'
 gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'paperclip'
+gem 'mini_racer'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
