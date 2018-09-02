@@ -2,13 +2,19 @@
   <div class="col-md-3 white-box" id="profile_user_info">
     <%= image_tag(@user.avatar.url(:medium),  id: 'profile_user_avatar') %>
     <h4><%= @user.name if @user.name %></h4>
-    Cidade<br>
-    Avaliações<br>
-    xx trocas já feitas
+    <div id="profile_user_address"><%= @user.addr_city %> - <%= @user.addr_state %></div>
+    <br><br>Avaliações<br>xx trocas já feitas...
   </div>
   <div class="col-md-9 white-box" id="profile_user_bookshelf">
     <h4>Estante</h4>
-    <h6>Disponíveis</h6>
-    <h6>Emprestados</h6>
+    <div>
+      <h6>Disponíveis</h6>
+      ...
+    </div>
+
+    <div>
+      <h6>Emprestados</h6>
+      ...
+    </div>
   </div>
 </div>

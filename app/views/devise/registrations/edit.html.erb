@@ -1,45 +1,65 @@
 <div class="authform">
-  <h3>Edit <%= resource_name.to_s.humanize %></h3>
+  <h3>Editar Perfil</h3>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
     <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <%= f.label :name %>
+        <%= f.text_field :name, :autofocus => true, class: 'form-control', required: true %>
+      </div>
+      <div class="form-group col-md-4">
+        <%= f.label :avatar  %>
+        <%= f.file_field :avatar %>
+      </div>
     </div>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', required: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: 'form-control' %>
+      </div>
     </div>
-    <div class="form-group">
-      <%= f.label :avatar  %>
-      <%= f.file_field :avatar %>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <%= f.label :addr_street %>
+        <%= f.text_field :addr_street, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-1">
+        <%= f.label :addr_number %>
+        <%= f.text_field :addr_number, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.label :addr_complement %>
+        <%= f.text_field :addr_complement, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-3">
+        <%= f.label :addr_city %>
+        <%= f.text_field :addr_city, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-1">
+        <%= f.label :addr_state %>
+	<%= f.select :addr_state, options_for_select(brazil_states, :selected => @user.addr_state), {:include_blank => true}, {:"data-default" => @user.addr_state, class: 'form-control'} %>
+      </div>
     </div>
     <fieldset>
-      <p>Leave these fields blank if you don't want to change your password.</p>
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, :autocomplete => 'off', class: 'form-control' %>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <%= f.label :password %>
+          <%= f.password_field :password, :autocomplete => 'off', class: 'form-control' %>
+        </div>
+        <div class="form-group col-md-3">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
+      <p>Deixe em branco caso não queira alterar sua senha.</p>
     </fieldset>
-    <fieldset>
-      <p>You must enter your current password to make changes.</p>
-      <div class="form-group">
-        <%= f.label :current_password %>
-        <%= f.password_field :current_password, class: 'form-control' %>
-      </div>
-    </fieldset>
-    <%= f.submit 'Update', :class => 'button right' %>
+    <%= f.submit 'Atualizar', :class => 'button right' %>
   <% end %>
-</div>
-<div class="authform">
-<h3>Cancel Account</h3>
-<p>Unhappy? We'll be sad to see you go.</p>
-<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
 </div>

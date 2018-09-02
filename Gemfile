@@ -26,6 +26,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'paperclip'
 gem 'mini_racer'
+gem 'geocoder'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'

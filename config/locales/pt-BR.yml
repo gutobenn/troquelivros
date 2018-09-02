@@ -19,6 +19,14 @@ pt-BR:
     attributes:
       user:
         name: "Nome"
+        email: "E-mail"
+        avatar: "Foto"
+        phone: "Telefone"
+        addr_street: "Endereço"
+        addr_number: "Número"
+        addr_complement: "Complemento"
+        addr_city: "Cidade"
+        addr_state: "Estado"
         role:
           user: "Usuário Comum"
           vip: "Usuário Intemediário (NÃO USADO)"
