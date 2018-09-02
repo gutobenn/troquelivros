@@ -75,16 +75,13 @@ body {
 
 /* Profile page */
 #profile_user_info {
-  padding-top: 15px;
+  padding-top: 25px;
   padding-bottom: 15px;
-
-  h4, #profile_user_address {
-    text-align: center;
-  }
+  text-align: center;
   
   #profile_user_avatar {
     border-radius: 150px;
-    max-width: 100%;
+    max-width: 85%;
     margin-bottom: 20px;
   }
 } 
