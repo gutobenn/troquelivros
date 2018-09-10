@@ -16,6 +16,9 @@ pt-BR:
       user:
         one: "Usuário"
         more: "Usuários"
+      book:
+        one: "Livro"
+        more: "Livros"
     attributes:
       user:
         name: "Nome"
@@ -31,6 +34,11 @@ pt-BR:
           user: "Usuário Comum"
           vip: "Usuário Intemediário (NÃO USADO)"
           admin: "Administrador"
+      book:
+        name: "Nome"
+        author: "Autor"
+        description: "Descrição"
+        picture: "Imagem"
     errors:
       models:
   will_paginate:

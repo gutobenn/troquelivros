@@ -1,0 +1,13 @@
+<div class="row" id="book-show">
+  <div class="col-sm-3 white-box">
+    <%= image_tag(@book.picture.url(:medium)) %>
+    <h4><%= @book.name %></h4>
+    <%= @book.author %>
+  </div>
+  <div class="col-sm-9 white-box">
+    <%= @book.description %>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_book_path(@book) %> |
+<%= link_to 'Remover', @book, method: :delete, data: { confirm: 'Deseja mesmo remover este livro?' } %>

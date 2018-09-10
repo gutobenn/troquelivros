@@ -17,6 +17,11 @@
 body {
   padding-top: 4.5rem;
   background: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+}
+
+label {
+  font-weight: 700;
 }
 
 .navbar-brand {
@@ -65,6 +70,12 @@ body {
   padding: 4px 10px 0;
 }
 
+.required_asterisk:before {
+  color: red;
+  content: '*';
+  padding-right: 5px;
+}
+
 /* Enable Bootstrap Hover Drop Downs */
 .dropdown-menu li:hover .sub-menu {
     visibility: visible;
@@ -88,4 +99,13 @@ body {
 
 #profile_user_bookshelf {
   padding-top: 15px;
+}
+
+/* Book show */
+
+#book-show {
+  img {
+    max-width: 100%;
+    margin: 15px auto;
+  }
 }
