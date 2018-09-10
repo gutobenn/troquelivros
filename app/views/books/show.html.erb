@@ -6,6 +6,27 @@
   </div>
   <div class="col-sm-9 white-box">
     <%= @book.description %>
+
+    <br /><br />
+
+    <h3>Quem tem</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Livro</th>
+          <th>Usuário</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @book.book_instances.each do |book_instance| %>
+          <tr>
+            <td><%= link_to book_instance.book.name, book_instance %></td>
+            <td><%= link_to book_instance.user.name, book_instance.user %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
 

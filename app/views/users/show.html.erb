@@ -9,12 +9,36 @@
     <h4>Estante</h4>
     <div>
       <h6>Disponíveis</h6>
-      ...
+      <div class="row">
+        <% @available_books.each do |book_instance| %>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="card">
+              <%= image_tag book_instance.book.picture.url(:medium), class: "card-img-top" %>
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to book_instance.book.name, book_instance %></h5>
+                <p class="card-text"><%= link_to book_instance.book.description, book_instance %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
 
     <div>
-      <h6>Emprestados</h6>
-      ...
+      <h6>Indisponíveis / emprestados</h6>
+      <div class="row">
+        <% @unavailable_books.each do |book_instance| %>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="card">
+              <%= image_tag book_instance.book.picture.url(:medium), class: "card-img-top" %>
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to book_instance.book.name, book_instance %></h5>
+                <p class="card-text"><%= link_to book_instance.book.description, book_instance %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

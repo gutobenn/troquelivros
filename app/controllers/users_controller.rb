@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @available_books = @user.book_instances.select { |book| book.status == 'available' }
+    @unavailable_books = @user.book_instances.select { |book| book.status == 'unavailable' }
   end
 
 end

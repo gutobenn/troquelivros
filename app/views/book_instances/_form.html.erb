@@ -1,4 +1,4 @@
-<%= form_with(model: book_instance, local: true) do |form| %>
+<%= simple_form_for(@book_instance) do |form| %>
   <% if book_instance.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(book_instance.errors.count, "error") %> prohibited this book_instance from being saved:</h2>
@@ -11,19 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :book_id %>
-    <%= form.text_field :book_id, id: :book_instance_book_id %>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.association :book, :collection => Book.order('lower(name)').all, required: true %> 
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :book_instance_user_id %>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: :book_instance_description, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :book_instance_description %>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.input  :status, as: :select, collection: [['available', 'Disponível'], ['unavailable', 'Indisponível']], label_method: :second, value_method: :first, required: true %>
+    </div>
   </div>
 
   <div class="actions">
