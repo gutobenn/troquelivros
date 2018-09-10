@@ -28,6 +28,8 @@ gem 'paperclip'
 gem 'mini_racer'
 gem 'geocoder'
 gem 'simple_form'
+gem 'dotenv'
+gem 'dotenv-rails'
 group :development do
   gem 'better_errors'
   gem 'rails_layout'
