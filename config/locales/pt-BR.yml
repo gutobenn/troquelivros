@@ -39,6 +39,10 @@ pt-BR:
         author: "Autor"
         description: "Descrição"
         picture: "Imagem"
+      book_instance:
+        book: "Livro"
+        description: "Descrição"
+        status: "Estado"
     errors:
       models:
   will_paginate:

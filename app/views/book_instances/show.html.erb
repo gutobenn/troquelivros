@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h3>Exemplar #<%= @book_instance.id %> </h3>
 
 <p>
-  <strong>Book:</strong>
-  <%= @book_instance.book %>
+  <strong>Livro:</strong>
+  <%= link_to @book_instance.book.name, @book_instance.book %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @book_instance.user %>
+  <strong>Usuário:</strong>
+  <%= link_to @book_instance.user.name, @book_instance.user %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @book_instance.description %>
 </p>
 
-<%= link_to 'Edit', edit_book_instance_path(@book_instance) %> |
-<%= link_to 'Back', book_instances_path %>
+<p>
+  <strong>Status:</strong>
+  <%= @book_instance.status %>
+</p>
+
+<%= link_to 'Editar', edit_book_instance_path(@book_instance), class: "btn btn-secondary" %>
