@@ -7,16 +7,15 @@
   </div>
   <div class="col-md-9 white-box" id="profile_user_bookshelf">
     <h4>Estante</h4>
-    <div>
-      <h6>Disponíveis</h6>
+    <div class="bookshelf_display">
+      <h5>Disponíveis</h5>
       <div class="row">
         <% @available_books.each do |book_instance| %>
           <div class="col-6 col-sm-4 col-md-3 col-lg-2">
             <div class="card">
               <%= image_tag book_instance.book.picture.url(:medium), class: "card-img-top" %>
               <div class="card-body">
-                <h5 class="card-title"><%= link_to book_instance.book.name, book_instance %></h5>
-                <p class="card-text"><%= link_to book_instance.book.description, book_instance %></p>
+                <h5 class="card-title book-title"><%= link_to book_instance.book.name, book_instance %></h5>
               </div>
             </div>
           </div>
@@ -24,16 +23,15 @@
       </div>
     </div>
 
-    <div>
-      <h6>Indisponíveis / emprestados</h6>
+    <div class="bookshelf_display">
+      <h5>Indisponíveis no momento</h5>
       <div class="row">
         <% @unavailable_books.each do |book_instance| %>
           <div class="col-6 col-sm-4 col-md-3 col-lg-2">
             <div class="card">
               <%= image_tag book_instance.book.picture.url(:medium), class: "card-img-top" %>
               <div class="card-body">
-                <h5 class="card-title"><%= link_to book_instance.book.name, book_instance %></h5>
-                <p class="card-text"><%= link_to book_instance.book.description, book_instance %></p>
+                <h5 class="card-title book-title"><%= link_to book_instance.book.name, book_instance %></h5>
               </div>
             </div>
           </div>
