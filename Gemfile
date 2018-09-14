@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '2.3.1'
 gem 'rails', '~> 5.1.6'
 gem 'sqlite3'
 gem 'puma', '~> 3.0'
@@ -11,6 +11,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'omniauth-facebook'
 gem 'thin'
+gem "font-awesome-rails"
+gem 'bootstrap-social-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

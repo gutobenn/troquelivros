@@ -19,5 +19,6 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
      <%= f.submit 'Sign up', :class => 'button right' %>
+     <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-social btn-facebook" %>
   <% end %>
 </div>
