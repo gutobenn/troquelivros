@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook]
 
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => ":style/default.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def address
@@ -38,4 +38,8 @@ class User < ApplicationRecord
   after_validation :geocode
 
   has_many :book_instances, dependent: :destroy
+  has_many :friend_requests, dependent: :destroy
+  has_many :pending_friends, through: :friend_requests, source: :friend
+
+
 end
