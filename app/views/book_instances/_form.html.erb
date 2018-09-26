@@ -13,7 +13,7 @@
 
   <div class="form-row">
     <div class="form-group col-md-4">
-      <%= form.association :book, :collection => Book.order('lower(name)').all, required: true %> 
+      <%= form.association :book, :collection => Book.order('lower(name)').all, required: true %>
     </div>
   </div>
 

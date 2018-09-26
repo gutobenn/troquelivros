@@ -20,4 +20,6 @@
   <%= @book_instance.status %>
 </p>
 
-<%= link_to 'Editar', edit_book_instance_path(@book_instance), class: "btn btn-secondary" %>
+<% if @book_instance.user_id == current_user.id %>
+  <%= link_to 'Editar', edit_book_instance_path(@book_instance), class: "btn btn-secondary" %>
+<% end %>
