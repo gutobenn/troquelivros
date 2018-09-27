@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'friends/index'
+
+  get 'friends/destroy'
+
+  resources :friend_requests
   resources :books
   resources :book_instances
   root to: 'visitors#index'

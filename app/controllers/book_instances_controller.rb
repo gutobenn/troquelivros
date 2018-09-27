@@ -19,6 +19,11 @@ class BookInstancesController < ApplicationController
 
   # GET /book_instances/1/edit
   def edit
+    #@book_instance = BookInstance.find(params[:id])
+
+    #unless current_user == @book_instance.user_id
+    #   redirect_to(@book_instance, notice: "You cannot edit this book") and return
+    #end
   end
 
   # POST /book_instances

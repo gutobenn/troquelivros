@@ -34,6 +34,10 @@ class User < ApplicationRecord
     end
   end
 
+  def remove_friend(friend)
+    current_user.friends.destroy(friend)
+  end
+
   geocoded_by :address
   after_validation :geocode
 
