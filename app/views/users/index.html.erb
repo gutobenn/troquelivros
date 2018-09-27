@@ -1,14 +1,18 @@
 <div class="container">
   <div class="row">
     <h3>Usuários</h3>
-    <table class="table">
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <%= render user %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <br />
+    <div class="row" id="user-index">
+    <% @users.each do |user| %>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="card">
+          <%= link_to (image_tag user.avatar.url(:medium), class: "card-img-top"), user %>
+          <div class="card-body">
+            <h5 class="card-title user-name"><%= link_to user.name, user %></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>
