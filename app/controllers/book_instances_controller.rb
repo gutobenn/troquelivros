@@ -1,5 +1,6 @@
 class BookInstancesController < ApplicationController
   before_action :set_book_instance, only: [:show, :edit, :update, :destroy]
+  before_action :owner_only, only: [:edit, :destroy]
 
   # GET /book_instances
   # GET /book_instances.json
@@ -66,6 +67,12 @@ class BookInstancesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book_instance
       @book_instance = BookInstance.find(params[:id])
+    end
+
+    def owner_only
+      if @book_instance.user.id != current_user.id
+        redirect_to root_path, :alert => "Acesso negado."
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
