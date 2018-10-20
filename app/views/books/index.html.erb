@@ -3,6 +3,20 @@
   <%= link_to 'Cadastrar Livro', new_book_path, class: 'btn btn-primary float-right' %>
 </h2>
 <br />
+
+<%= search_form_for @q do |f| %>
+  <div class="form-group row">
+    <div class="col-md-3">
+      <label>Nome</label><br>
+      <%= f.search_field :name_cont, :class => 'form-control'%>
+    </div>
+  </div>
+  <%= f.submit %><br><br>
+<% end %>
+
+<% if params[:q] %>
+  Resultado da busca: <b><%= @books.count %> livros encontrados</b><br><br>
+<% end %>
 <div class="row" id="book-index">
 <% @books.each do |book| %>
   <div class="col-6 col-sm-4 col-md-3 col-lg-2">
@@ -15,5 +29,8 @@
     </div>
   </div>
 <% end %>
+</div>
+<div class="apple_pagination">
+  <%= will_paginate @books, :container => false %>
 </div>
 

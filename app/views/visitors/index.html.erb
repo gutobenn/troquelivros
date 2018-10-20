@@ -1,8 +1,40 @@
 <div class="container">
   <div class="jumbotron">
-    <h1>Encontre livros perto de você</h1>
+    <h1>Encontre um livro em Porto Alegre</h1>
     <p class="lead">Pesquise pelo livro que você quer e encontre pessoas dispostas a emprestá-lo, trocá-lo ou doá-lo.</p>
-    <input type="text" placeholder="Ex: O Mundo de Sofia"/>
-    <a class="btn btn-sm btn-primary ml-auto" href="#" role="button">Buscar</a>
+    <%= search_form_for @q do |f| %>
+      <div class="form-group row">
+        <div class="col-md-6 col-lg-5">
+          <%= f.search_field :book_name_cont, :class => 'form-control name-field', :placeholder => 'Ex: O Mundo de Sofia'%>
+          <%= f.submit :class => 'btn btn-sm btn-primary submit-button' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="home-about-us">
+        <h3>Olá!</h3>
+        Somos uma rede de compartilhamento de livros. <br />
+        Não deixe seus livros na estante pegando poeira. Compartilhe com a gente :)
+      </div>
+      <div class="home-news">
+        <h4>Novidades</h4>
+        <div class="row" id="book-index" id="book-index">
+          <% @last_books.each do |book| %>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <%= link_to (image_tag book.picture.url(:medium), class: "card-img-top"), book %>
+                <div class="card-body">
+                  <h5 class="card-title book-title"><%= link_to book.name, book %></h5>
+                  <p class="card-text"><%= link_to book.description, book %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

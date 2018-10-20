@@ -157,3 +157,20 @@ label {
     margin-top: 65px;
   }
 }
+
+/* Home */
+.jumbotron input {
+  display: inline-block;
+}
+.jumbotron .name-field {
+  float: left;
+  width: calc(100% - 85px);
+  margin-right: 5px;
+}
+.jumbotron .submit-button {
+  margin-top: 3px;
+}
+.home-about-us {
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+}

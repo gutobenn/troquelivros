@@ -4,7 +4,13 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @q = Book.ransack(params[:q])
+    @q.sorts = 'name asc' if @q.sorts.empty?
+    @books = @q.result(distinct:true)
+
+    respond_to do |format|
+      format.html { @books = @books.paginate(page: params[:page], per_page: 20) }
+    end
   end
 
   # GET /books/1
