@@ -5,6 +5,8 @@ class BookInstancesController < ApplicationController
   # GET /book_instances
   # GET /book_instances.json
   def index
+    params[:q].delete_if {|key, value| value == "0" } unless params[:q].nil?
+
     @q = BookInstance.ransack(params[:q])
     @q.sorts = 'name asc' if @q.sorts.empty?
     @book_instances = @q.result(distinct:true)
