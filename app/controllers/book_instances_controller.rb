@@ -83,6 +83,6 @@ class BookInstancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_instance_params
-      params.require(:book_instance).permit(:book_id, :user_id, :description, :status)
+      params.require(:book_instance).permit(:book_id, :user_id, :description, :status, :troca, :emprestimo, :doacao)
     end
 end

@@ -8,6 +8,15 @@
       <label>Nome</label><br>
       <%= f.search_field :book_name_cont, :class => 'form-control'%>
     </div>
+    <div class="col-md-3">
+      <label>Autor</label><br>
+      <%= f.search_field :book_author_cont, :class => 'form-control'%>
+    </div>
+    <div class="col-md-3">
+      <label><%= f.check_box :troca_true %> Troca</label>
+      <label><%= f.check_box :emprestimo_true %> Empréstimo</label>
+      <label><%= f.check_box :doacao_true %> Doação</label>
+    </div>
   </div>
   <%= f.submit %><br><br>
 <% end %>

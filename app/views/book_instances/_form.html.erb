@@ -30,6 +30,23 @@
     </div>
   </div>
 
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.input  :troca, as: :select, collection: [[true, 'Sim'], [false, 'Não']], label_method: :second, value_method: :first, required: true %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.input  :emprestimo, as: :select, collection: [[true, 'Sim'], [false, 'Não']], label_method: :second, value_method: :first, required: true %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= form.input  :doacao, as: :select, collection: [[true, 'Sim'], [false, 'Não']], label_method: :second, value_method: :first, required: true %>
+    </div>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+    <h3>Conversas</h3>	
+    <ul id="conversations-list">
+      <% @conversations.each do |conversation| %>
+        <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+      <% end %>
+    </ul>
+  </div>
+ 
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Usuários</h4>
+      </div>
+      <div class="card-body">
+        <ul>
+          <% @users.each do |user| %>
+            <li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
