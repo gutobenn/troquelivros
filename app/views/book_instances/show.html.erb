@@ -16,18 +16,36 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @book_instance.status %>
+
+  <% if @book_instance.status == "available" %>
+    <strong>Status: </strong>Disponível
+  <% else %>
+    <strong>Status: </strong>Indisponível
+  <% end %>
+
 </p>
 
-<p>
-  <strong>Troca:</strong>
-  <%= @book_instance.troca %><br />
-  <strong>Empréstimo:</strong>
-  <%= @book_instance.emprestimo %> <br />
-  <strong>Doação:</strong>
-  <%= @book_instance.doacao %>
-</p>
+<% if @book_instance.user_id != current_user.id %>
+  <p>
+    <% if @book_instance.troca && @book_instance.status == "available"%>
+      <button type="button" class="btn btn-primary">Solicitar Troca</button>
+    <% else%>
+      <button type="button" class="btn btn-primary" disabled>Solicitar Troca</button>
+    <% end %>
+
+    <% if @book_instance.emprestimo && @book_instance.status == "available"%>
+      <button type="button" class="btn btn-primary">Solicitar Emprestimo</button>
+    <% else %>
+      <button type="button" class="btn btn-primary" disabled>Solicitar Emprestimo</button>
+    <% end %>
+
+    <% if @book_instance.doacao && @book_instance.status == "available"%>
+      <button type="button" class="btn btn-primary">Solicitar Doação</button>
+    <% else %>
+      <button type="button" class="btn btn-primary" disabled>Solicitar Doação</button>
+    <% end %>
+  </p>
+<% end %>
 
 <% if @book_instance.user_id == current_user.id %>
   <%= link_to 'Editar', edit_book_instance_path(@book_instance), class: "btn btn-secondary" %>

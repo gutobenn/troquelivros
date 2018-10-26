@@ -14,7 +14,7 @@
       <h5>Disponíveis</h5>
       <div class="row">
         <% @available_books.each do |book_instance| %>
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="col-6 col-sm-4 col-md-3 col-lg-3">
             <div class="card">
               <%= link_to (image_tag book_instance.book.picture.url(:medium), class: "card-img-top"), book_instance %>
               <div class="card-body">
@@ -30,7 +30,7 @@
       <h5>Indisponíveis no momento</h5>
       <div class="row">
         <% @unavailable_books.each do |book_instance| %>
-          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="col-6 col-sm-4 col-md-3 col-lg-3">
             <div class="card">
               <%= image_tag book_instance.book.picture.url(:medium), class: "card-img-top" %>
               <div class="card-body">
