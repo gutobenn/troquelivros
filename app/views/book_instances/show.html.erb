@@ -34,7 +34,7 @@
     <% end %>
 
     <% if @book_instance.emprestimo && @book_instance.status == "available"%>
-      <%= button_to "Troca", transactions_path, params: { transaction: { askingUser_id: 1 } }, method: :create %>
+      <%= button_to "Troca", transactions_path, params: { transaction: { askingUser_id: 1,askedUser_id: 2, askedBook_instance_id:1, askingBook_instance_id: 2 } }, method: :create %>
       <button type="button" class="btn btn-primary">Solicitar Emprestimo</button>
     <% else %>
       <button type="button" class="btn btn-primary" disabled>Solicitar Emprestimo</button>

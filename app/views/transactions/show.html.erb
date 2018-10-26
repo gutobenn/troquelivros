@@ -2,12 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @transaction.user %>
+  <%= @transaction.askingUser %>
 </p>
 
 <p>
   <strong>Book instance:</strong>
-  <%= @transaction.book_instance %>
+  <%= @transaction.askedBook_instance %>
 </p>
 
 <p>
@@ -18,11 +18,6 @@
 <p>
   <strong>Status:</strong>
   <%= @transaction.status %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @transaction.date %>
 </p>
 
 <%= link_to 'Edit', edit_transaction_path(@transaction) %> |
