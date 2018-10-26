@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181025150243) do
+ActiveRecord::Schema.define(version: 20181026004410) do
 
   create_table "book_instances", force: :cascade do |t|
     t.integer "book_id"
@@ -46,24 +46,6 @@ ActiveRecord::Schema.define(version: 20181025150243) do
     t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
   end
 
-  create_table "friend_requests", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["friend_id"], name: "index_friend_requests_on_friend_id"
-    t.index ["user_id"], name: "index_friend_requests_on_user_id"
-  end
-
-  create_table "friendships", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["friend_id"], name: "index_friendships_on_friend_id"
-    t.index ["user_id"], name: "index_friendships_on_user_id"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
@@ -72,6 +54,24 @@ ActiveRecord::Schema.define(version: 20181025150243) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "askingUser_id"
+    t.integer "askedUser_id"
+    t.integer "askedBook_instance_id"
+    t.integer "askingBook_instance_id"
+    t.string "type"
+    t.string "status"
+    t.string "requestDate"
+    t.string "returnDate"
+    t.string "initialDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["askedBook_instance_id"], name: "index_transactions_on_askedBook_instance_id"
+    t.index ["askedUser_id"], name: "index_transactions_on_askedUser_id"
+    t.index ["askingBook_instance_id"], name: "index_transactions_on_askingBook_instance_id"
+    t.index ["askingUser_id"], name: "index_transactions_on_askingUser_id"
   end
 
   create_table "users", force: :cascade do |t|

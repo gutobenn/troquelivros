@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  skip_before_action :verify_authenticity_token #TODO arrumar dps
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
 
   # GET /transactions
@@ -69,6 +70,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:user_id, :book_instance_id, :type, :status, :date)
+      params.require(:transaction).permit(:askingUser_id, :askedUser_id, :askedBook_instance_id, :askingBook_instance_id, :type, :status, :requestDate, :returnDate, :initialDate)
     end
 end

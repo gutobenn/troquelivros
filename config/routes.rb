@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :transactions
   resources :books
   resources :book_instances
   root to: 'visitors#index'
