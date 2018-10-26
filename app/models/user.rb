@@ -43,4 +43,8 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
+
+  has_many :requested_transactions, :class_name => 'Transaction', :foreign_key => 'requested_user_id'
+  has_many :received_transactions, :class_name => 'Transaction', :foreign_key => 'requester_user_id'
+
 end
