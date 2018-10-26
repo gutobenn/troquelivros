@@ -28,20 +28,19 @@
 <% if @book_instance.user_id != current_user.id %>
   <p>
     <% if @book_instance.troca && @book_instance.status == "available"%>
-      <button type="button" class="btn btn-primary">Solicitar Troca</button>
+      <%= button_to "Solicitar Troca", transactions_path, params: { transaction: { askingUser_id: current_user,askedUser_id: @book_instance.user, askedBook_instance_id:@book_instance, askingBook_instance_id: 2, status: 'Pendente'} }, class: "btn btn-primary" , method: :create %>
     <% else%>
       <button type="button" class="btn btn-primary" disabled>Solicitar Troca</button>
     <% end %>
 
     <% if @book_instance.emprestimo && @book_instance.status == "available"%>
-      <%= button_to "Troca", transactions_path, params: { transaction: { askingUser_id: 1,askedUser_id: 2, askedBook_instance_id:1, askingBook_instance_id: 2 } }, method: :create %>
-      <button type="button" class="btn btn-primary">Solicitar Emprestimo</button>
+      <%= button_to "Solicitar Emprestimo", transactions_path, params: { transaction: { askingUser_id: current_user,askedUser_id: @book_instance.user, askedBook_instance_id:@book_instance, askingBook_instance_id: 2, status: 'Pendente'} }, class: "btn btn-primary" , method: :create %>
     <% else %>
       <button type="button" class="btn btn-primary" disabled>Solicitar Emprestimo</button>
     <% end %>
 
     <% if @book_instance.doacao && @book_instance.status == "available"%>
-      <button type="button" class="btn btn-primary">Solicitar Doação</button>
+    <%= button_to "Solicitar Doação", transactions_path, params: { transaction: { askingUser_id: current_user,askedUser_id: @book_instance.user, askedBook_instance_id:@book_instance, askingBook_instance_id: 2, status: 'Pendente'} }, class: "btn btn-primary" , method: :create %>
     <% else %>
       <button type="button" class="btn btn-primary" disabled>Solicitar Doação</button>
     <% end %>
